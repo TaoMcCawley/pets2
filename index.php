@@ -40,8 +40,14 @@ $f3->route('POST /order2', function(){
     echo $template->render('views/form2.html');
 
 });
-$f3->route('GET /results', function(){
-    echo "<p>Results</p>";
+$f3->route('POST /results', function($f3){
+    $_SESSION['color'] = $_POST['colors'];
+
+    $f3->set('animal', $_SESSION['animal']);
+    $f3->set('color', $_SESSION['color']);
+
+    $template = new Template();
+    echo $template->render('views/results.html');
 });
 
 
