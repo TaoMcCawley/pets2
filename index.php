@@ -35,5 +35,9 @@ $f3->route('GET /pets/order', function(){
 $f3->route('GET /pets/order2', function(){
    echo "<p>Form 2</p>";
 });
+$f3->route('GET /pets/results', function(){
+    echo "<p>Results</p>";
+});
+
 
 $f3->run();
