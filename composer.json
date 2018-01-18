@@ -1,0 +1,12 @@
+{
+  "name": "asmithgr/pets2",
+  "authors": [
+    {
+      "name": "Adrian Smith, James McPherson",
+      "email": "adriansmith5796@gmail.com"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
