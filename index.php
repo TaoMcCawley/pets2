@@ -28,14 +28,15 @@ $f3->route('GET /pets/show/@type', function($f3, $params){
 
 });
 
-$f3->route('GET /pets/order', function(){
-    echo "<p>Form 1</p>";
+$f3->route('GET /order', function(){
+    $template = new Template();
+    echo $template->render('views/form1.html');
 });
 
-$f3->route('GET /pets/order2', function(){
+$f3->route('GET /order2', function(){
    echo "<p>Form 2</p>";
 });
-$f3->route('GET /pets/results', function(){
+$f3->route('GET /results', function(){
     echo "<p>Results</p>";
 });
 
