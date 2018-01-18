@@ -28,4 +28,8 @@ $f3->route('GET /pets/show/@type', function($f3, $params){
 
 });
 
+$f3->route('GET /pets/order', function(){
+    echo "<p>Form 1</p>";
+});
+
 $f3->run();
