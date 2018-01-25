@@ -50,5 +50,9 @@ $f3->route('POST /results', function($f3){
     echo $template->render('views/results.html');
 });
 
+$f3->route('POST /new-pet', function($f3){
+
+});
+
 
 $f3->run();
