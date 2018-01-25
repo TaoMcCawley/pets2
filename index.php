@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
 session_start();
 
 $f3 = Base::instance();
-
+$f3->set('colors', array('pink', 'green', 'blue'));
 $f3->set('DEBUG', 3);
 
 $f3->route('GET /', function(){
