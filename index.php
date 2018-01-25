@@ -6,10 +6,14 @@
  * Time: 10:31 AM
  */
 
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+
 require 'vendor/autoload.php';
 session_start();
 
 $f3 = Base::instance();
+
 $f3->set('colors', array('pink', 'green', 'blue'));
 $f3->set('DEBUG', 3);
 
@@ -50,7 +54,10 @@ $f3->route('POST /results', function($f3){
     echo $template->render('views/results.html');
 });
 
-$f3->route('POST /new-pet', function($f3){
+$f3->route('GET /new-pet', function($f3){
+
+    $template = new Template();
+    echo $template->render('views/form5.html');
 
 });
 
