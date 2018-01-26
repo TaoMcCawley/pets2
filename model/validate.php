@@ -4,6 +4,7 @@ $errors = array();
 if(!validColor($color)){
     $errors[$color] = "Please enter a valid color.";
 }
+$success = sizeof($errors) == 0;
 
 /**
  * validates a color
@@ -21,8 +22,8 @@ function validColor($color) {
  * @return boolean
  */
 function validString($string){
-    if(!is_string($string) && ctype_alpha($string)){
-        return false;
+    if(is_string($string) && ctype_alpha($string)){
+        return true;
     }
-    return true;
+    return false;
 }
