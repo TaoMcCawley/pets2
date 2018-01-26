@@ -13,7 +13,6 @@ require 'vendor/autoload.php';
 session_start();
 
 $f3 = Base::instance();
-
 $f3->set('colors', array('pink', 'green', 'blue'));
 $f3->set('DEBUG', 3);
 
@@ -54,14 +53,13 @@ $f3->route('POST /results', function($f3){
     echo $template->render('views/results.html');
 });
 
-$f3->route('GET /new-pet', function($f3){
+$f3->route('GET|POST /new-pet', function($f3){
 
     if(isset($_POST['submit'])){
         $color = $_POST['pet-color'];
         $type = $_POST['pet-type'];
         $name = $_POST['pet-name'];
-        $errors = $_POST['errors'];
-        $success = $_POST['success'];
+
         include('model/validate.php');
 
         $f3->set('color', $color);

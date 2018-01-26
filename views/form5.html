@@ -2,31 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Order Pet</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 </head>
-<body>
+    <body>
 
-    <!--If submission was successful, display a confirmation-->
-    <check if = "{{@success}}">
-        <h2> Thank you for your order of a {{@type}}!</h2>
-    </check>
+        <h1>Order pet</h1>
 
+        <form action="" method="post">
+            <label class = "col-sm-1 control-label" for = "pet-color">
+                Pet Color
+            </label>
+            <div class = "col-sm-3">
 
-    <label class = "col-sm-1 control-label" for = "pet-color">
-        Pet Color
-    </label>
-    <div class = "col-sm-3">
+                <select class = "form-control" name = "pet-color" id = "pet-color">
+                    <option>--Select--</option>
+                    <repeat group = "{{@colors}}" value = "{{@colorOption}}">
+                        <option> {{@colorOption}}</option>
+                    </repeat>
+                </select>
+            </div>
 
-        <check if = "{{isset(@errors['color')}}">
-            <p>{{@errors['color'}}</p>
+            <label class = "col-sm-1 control-label" for = "pet-type">
+                Pet Type
+            </label>
+            <input type="text" id="pet-type" name="pet-type">
+
+            <label class = "col-sm-1 control-label" for = "pet-name">
+                Pet Name
+            </label>
+            <input type="text" id="pet-name" name="pet-name">
+
+            <button type="submit" name="submit">Submit</button>
+        </form>
+
+        <!--If submission was successful, display a confirmation-->
+        <check if = "{{@success}}">
+            <h2> Thank you for your order of {{ @name }} the {{ @colorOption }} {{@type}}!</h2>
         </check>
-        <select class = "form-control" name = "pet-color" id = "pet-color">
-            <option>--Select--</option>
-            <repeat group = "{{@colors}}" value = "{{@colorOption}}">
-                <option> {{@colorOption}}</option>
-            </repeat>
-        </select>
-    </div>
 
-</body>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    </body>
 </html>
