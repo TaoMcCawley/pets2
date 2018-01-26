@@ -58,6 +58,17 @@ $f3->route('GET /new-pet', function($f3){
 
     if(isset($_POST['submit'])){
         $color = $_POST['pet-color'];
+        $type = $_POST['pet-type'];
+        $name = $_POST['pet-name'];
+        $errors = $_POST['errors'];
+        $success = $_POST['success'];
+        include('model/validate.php');
+
+        $f3->set('color', $color);
+        $f3->set('type', $type);
+        $f3->set('name', $name);
+        $f3->set('errors', $errors);
+        $f3->set('success', $success);
     }
 
     $template = new Template();
