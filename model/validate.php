@@ -1,6 +1,10 @@
 <?php
 $errors = array();
 
+if(!validColor($color)){
+    $errors[$color] = "Please enter a valid color.";
+}
+
 /**
  * validates a color
  * @param String color
@@ -20,4 +24,5 @@ function validString($string){
     if(!is_string($string) && ctype_alpha($string)){
         return false;
     }
+    return true;
 }
