@@ -2,7 +2,13 @@
 $errors = array();
 
 if(!validColor($color)){
-    $errors[$color] = "Please enter a valid color.";
+    $errors['color'] = "Please enter a valid color.";
+}
+if(!validString($type)){
+    $errors['type'] = "Please enter a valid animal type.";
+}
+if(!validString($name)){
+    $errors['name'] = "Please enter a valid name.";
 }
 $success = sizeof($errors) == 0;
 
