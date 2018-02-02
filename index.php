@@ -74,5 +74,19 @@ $f3->route('GET|POST /new-pet', function($f3){
 
 });
 
+$f3->route("GET /pets", function($f3, $params){
+   include "classes/pet.php";
+   include "classes/Cat.php";
+    $pet1 = new Pet("Rover", "pink");
+    $pet1->eat();
+    $pet1->talk();
+    $pet1->sleep();
+    print_r($pet1);
+
+    $cat1 = new Cat();
+    $cat1->sleep();
+    $cat1->scratch();
+});
+
 
 $f3->run();
